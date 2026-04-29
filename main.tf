@@ -50,7 +50,7 @@ resource "kubernetes_deployment" "nginx_test" {
               memory = "128Gi"
             }
             requests = {
-              cpu    = "16"
+              cpu    = "22"
               memory = "64Gi"
             }
           }
