@@ -47,11 +47,11 @@ resource "kubernetes_deployment" "nginx_test" {
           resources {
             limits = {
               cpu    = "32"
-              memory = "512Mi"
+              memory = "128Gi"
             }
             requests = {
               cpu    = "16"
-              memory = "50Mi"
+              memory = "64Gi"
             }
           }
         }
