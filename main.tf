@@ -1,3 +1,23 @@
+# DUMMY PROVIDER TO TRIGGER INFRACOST PRICING
+provider "aws" {
+  region = "us-east-1"
+}
+
+# DUMMY NODE GROUP (Infracost will see 20 expensive nodes)
+resource "aws_eks_node_group" "expensive_nodes" {
+  cluster_name    = "greenops-cluster"
+  node_group_name = "over-budget-nodes"
+  node_role_arn   = "arn:aws:iam::123456789012:role/eks-role"
+  subnet_ids      = ["subnet-12345"]
+
+  scaling_config {
+    desired_size = 20
+    max_size     = 20
+    min_size     = 20
+  }
+
+  instance_types = ["m5.4xlarge"] # This is a VERY expensive instance type
+}
 terraform {
   required_providers {
     kubernetes = {
