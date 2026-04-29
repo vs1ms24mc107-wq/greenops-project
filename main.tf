@@ -44,7 +44,7 @@ resource "kubernetes_deployment" "nginx_test" {
   }
 
   spec {
-    replicas = 20 # Let's start with 2 running pods
+    replicas = 2# Let's start with 2 running pods
 
     selector {
       match_labels = {
