@@ -1,5 +1,5 @@
 # DUMMY PROVIDER TO TRIGGER INFRACOST PRICING
-/*provider "aws" {
+provider "aws" {
   region = "us-east-1"
 }
 
@@ -18,7 +18,7 @@ resource "aws_eks_node_group" "expensive_nodes" {
 
   instance_types = ["m5.4xlarge"] # This is a VERY expensive instance type
 }
-*/
+
 terraform {
   required_providers {
     kubernetes = {
